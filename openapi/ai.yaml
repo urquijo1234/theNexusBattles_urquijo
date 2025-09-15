@@ -1,0 +1,60 @@
+openapi: 3.0.1
+info:
+  title: AI Action Selector
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      summary: Verifica servicio
+      responses:
+        '200':
+          description: OK
+  /predict:
+    post:
+      summary: Selecciona acción del héroe
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TurnState'
+            examples:
+              basico:
+                value:
+                  hero: {type: PICARO_MACHETE, level: 3, power: 6, attack: 22, defense: 8, hp: 28, hp_pct: 0.8}
+                  enemy: {type: MAGO_HIELO, level: 3, attack: 20, defense: 10, hp: 26, hp_pct: 0.7, power: 5}
+                  context: {last_actions: [BASICO, ATAQUE], special_ready: true}
+      responses:
+        '200':
+          description: Acción recomendada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredictResponse'
+              examples:
+                special:
+                  value: {action: SPECIAL, confidence: 0.73}
+components:
+  schemas:
+    Stats:
+      type: object
+      properties:
+        type: {type: string}
+        level: {type: number}
+        hp: {type: number}
+        hp_pct: {type: number}
+        power: {type: number}
+        attack: {type: number}
+        defense: {type: number}
+    TurnState:
+      type: object
+      properties:
+        hero: { $ref: '#/components/schemas/Stats' }
+        enemy:{ $ref: '#/components/schemas/Stats' }
+        context:
+          type: object
+    PredictResponse:
+      type: object
+      properties:
+        action: {type: string}
+        confidence: {type: number}

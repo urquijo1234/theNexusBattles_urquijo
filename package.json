@@ -1,0 +1,17 @@
+{
+  "name": "the-nexus-battles-ai",
+  "version": "1.0.0",
+  "scripts": {
+    "aiclient2": "ts-node src/clients/AIClient2.ts",
+    "test": "ts-node tests/aiclient2.socket.spec.ts"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.3.1",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2"
+  }
+}
