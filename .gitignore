@@ -1,0 +1,17 @@
+# Ignore model artifacts and archives
+ai/models/*
+!ai/models/.gitkeep
+AIclient/AIClient(2)/models/*
+!AIclient/AIClient(2)/models/.gitkeep
+*.keras
+*.pkl
+*.onnx
+*.7z
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+package-lock.json

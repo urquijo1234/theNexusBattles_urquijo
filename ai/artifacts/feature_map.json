@@ -1,0 +1,28 @@
+{
+  "columns": [
+    "actor_level",
+    "enemy_level",
+    "actor_hp",
+    "enemy_hp",
+    "actor_hp_pct",
+    "enemy_hp_pct",
+    "actor_power",
+    "enemy_power",
+    "actor_attack",
+    "enemy_attack",
+    "actor_defense",
+    "enemy_defense",
+    "actor_type_FIRE_MAGE",
+    "actor_type_ICE_MAGE",
+    "actor_type_MACHETE_ROGUE",
+    "actor_type_POISON_ROGUE",
+    "actor_type_TANK",
+    "actor_type_WEAPONS_PAL",
+    "enemy_type_FIRE_MAGE",
+    "enemy_type_ICE_MAGE",
+    "enemy_type_MACHETE_ROGUE",
+    "enemy_type_POISON_ROGUE",
+    "enemy_type_TANK",
+    "enemy_type_WEAPONS_PAL"
+  ]
+}
